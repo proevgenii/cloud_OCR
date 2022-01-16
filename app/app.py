@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = r'static/'
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('templ.html') # index.html
 
 
 @app.route('/submitImage/', methods=['POST', ])
@@ -23,10 +23,12 @@ def submitImage():
     image.save(app.config['UPLOAD_FOLDER']+filename)
     img = Image.open(app.config['UPLOAD_FOLDER']+filename)
     text = pytesseract.image_to_string(img)
+    print(text)
     f = open(os.path.join(app.config['UPLOAD_FOLDER'], filename) + '.txt', 'w')
     f.write(text)
     f.close()
-    return render_template('exm.html', text=text, filename=f)
+
+    return render_template('templ1.html', text=text, filename=f) #exm.html
 
 
 if __name__ == '__main__':

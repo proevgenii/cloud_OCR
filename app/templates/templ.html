@@ -1,0 +1,117 @@
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title>Index | OCR Application</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<div class="canvas-wrap">
+   <div class="canvas-content">
+      <h1>OCR App</h1>
+      <div class="row">
+         <div class='col-xs-12'>
+            <form class="form" action="/submitImage/" method="POST" enctype="multipart/form-data">
+               <div class='row'>
+
+
+                  <div class="upload_img">
+                     <img src="{{ url_for('static', filename='no_img.png') }}" id='uploadedImage' width='500'
+                        height="250">
+                  </div>
+
+
+                  <div class='col-xs-4'>
+                     <div class="choose_img">
+                        <label for='ocrImage'>Choose Image: </label>
+                        <input class='form-control' type="file" name="ocrImage" id="ocrImage" src="" alt=""
+                           onchange='showImage(event)'>
+                     </div>
+                  </div>
+               </div>
+               <div class='row'>
+                  <div class='col-xs-12'>
+                     <div class="button"><input class='btn btn-success' type="submit" value="Convert" /></div>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <div id="canvas" class="gradient"></div>
+</div>
+    <script type="text/javascript" charset="utf-8">
+
+function showImage(event){
+    uploadedImage = document.getElementById('ocrImage').files[0];
+    console.log(uploadedImage);
+    document.getElementById('uploadedImage').src = URL.createObjectURL(event.target.files[0]);
+}
+
+    </script>
+</html>
+<style>
+   body {
+      background-color: #fff;
+      margin: 0px;
+   }
+
+   h1 {
+      margin: 0;
+   }
+
+   a {
+      color: #0078ff;
+   }
+
+   #canvas {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: #1a1724;
+   }
+
+   .page-header {
+      background: none;
+      color: #fff;
+      padding: 100px 30px;
+   }
+
+   .canvas-wrap {
+      position: relative;
+
+   }
+
+   div.canvas-content {
+      position: relative;
+      z-index: 2000;
+      color: #fff;
+      text-align: center;
+   }
+
+   .btn {
+      background-color: rgba(255, 255, 255, 1);
+      color: #606c71;
+   }
+</style>
+<!-- Main library -->
+<script src="../static/js/three.min.js"></script>
+
+<!-- Helpers -->
+<script src="../static/js/projector.js"></script>
+<script src="../static/js/canvas-renderer.js"></script>
+
+<!-- Visualitzation adjustments -->
+<script src="../static/js/3d-lines-animation.js"></script>
+
+<!-- Animated background color -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="../static/js/color.js"></script>
+

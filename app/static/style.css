@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&family=Yuji+Syuku&display=swap");
+
+@media (max-width: 700px) {
+   .info {
+      display: block;
+      text-align: center;
+   }
+}
+
+html {
+   font-family: 'Roboto', sans-serif;
+}
+
+
+.container-fluid {
+   padding-top: 100px;
+}
+
+form {
+   border-radius: 10px;
+}
+
+.row {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.choose_img {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 25px;
+   line-height: 30px;
+}
+
+.button {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 20px;
+}
+
+.upload_img {
+   display: flex;
+   align-self: center;
+   
+}
+
+img {
+   border-radius: 10px;
+   background-color: wheat;
+
+}
+
+textarea {
+   border-radius: 10px;
+   width: 100%;
+   color: #1a1724;
+   
+}
+.Download {
+   padding-top: 10px;
+   padding-left: 15px;
+}
+
+/*upload_img {*/
+/*  border: 10px solid #000;*/
+/*  -webkit-border-radius: 10px; */
+/*  border-radius: 10px; !* CSS3 *!*/
+
+/*  behavior: url(border-radius.htc); !* учим IE border-radius *!*/
+/*}*/
